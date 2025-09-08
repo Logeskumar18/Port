@@ -21,7 +21,7 @@ export default function About() {
             <span className="badge bg-primary fs-6 py-2 px-3" style={{ background: "#00bcd4", color: "#182636" }}>🎓 M.Sc. in Computer Science</span>
             <span className="badge bg-secondary fs-6 py-2 px-3" style={{ background: "#203a43" }}>💻 MERN Stack Developer</span>
             <span className="badge bg-info text-dark fs-6 py-2 px-3" style={{ background: "#2c5364" }}>☕ Java Programmer</span>
-            <span className="badge bg-dark fs-6 py-2 px-3" style={{ background: "#182636" }}>🤖 AI & Problem-Solving Enthusiast</span>
+            <span className="badge bg-dark fs-6 py-2 px-3" style={{ background: "#182636" }}>🤖 AI & Tech Enthusiast</span>
           </div>
 
           {/* Intro & Story */}

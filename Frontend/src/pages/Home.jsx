@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import codeIllustration from '../assets/Coding-bro.svg';
+import { Link } from 'react-router-dom';
 
 const roles = [
   "MERN Developer",
-  "Java Programmer",
   "Problem Solver",
   "Tech Enthusiast"
 ];
@@ -46,6 +46,7 @@ export default function Home() {
     return () => clearTimeout(typingTimeout);
   }, [currentRoleIndex]);
 
+
   return (
     <section
       id="home"
@@ -53,7 +54,10 @@ export default function Home() {
       style={{
         position: "relative",
         overflow: "hidden",
-        padding: "2rem"
+        padding: "2rem",
+        background: 'linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b2735)',
+        backgroundSize: '400% 400%',
+        animation: 'gradientBG 15s ease infinite',
       }}
     >
       <div className="container d-flex flex-column flex-lg-row align-items-center">
@@ -70,30 +74,53 @@ export default function Home() {
           </p>
           <p className="mb-4 fst-italic" style={{ fontSize: "1rem", color: "#a0c4c9" }}>
             I’m currently pursuing my M.Sc. in Computer Science, with a strong focus on
-            <span style={{ color: "#00bcd4", fontWeight: "bold" }}> MERN stack</span>,
-            <span style={{ color: "#00bcd4", fontWeight: "bold" }}> Java</span>, and
-            <span style={{ color: "#00bcd4", fontWeight: "bold" }}> AI technologies</span>.
+            <span style={{ color: "#00bcd4", fontWeight: "bold" }}> MERN stack</span> and <span style={{ color: "#00bcd4", fontWeight: "bold" }}>Java</span>.
           </p>
           <p className="mb-4 fs-5" style={{ whiteSpace: 'nowrap', borderRight: '2px solid #00bcd4', paddingRight: '5px' }}>
             {displayedRole}
           </p>
           {/* Call to Action Buttons */}
           <div className="mb-4 d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-            <a href="#projects" className="btn btn-primary btn-lg">
+            <Link
+              to="/projects"
+              className="btn btn-lg"
+              style={{
+                backgroundColor: '#00bcd4',
+                color: '#182636',
+                fontWeight: '700',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '0.8rem',
+                boxShadow: '0 0 15px #00bcd4',
+                transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
+                textDecoration: 'none'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.backgroundColor = '#00e5ff';
+                e.currentTarget.style.boxShadow = '0 0 30px #00e5ff';
+                e.currentTarget.style.color = '#0a2f3f';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.backgroundColor = '#00bcd4';
+                e.currentTarget.style.boxShadow = '0 0 15px #00bcd4';
+                e.currentTarget.style.color = '#182636';
+              }}
+            >
               View My Work
-            </a>
-            <a href="#contact" className="btn btn-outline-light btn-lg">
+            </Link>
+            {/* Use React Router Link for navigation */}
+            <Link to="/contact" className="btn btn-outline-light btn-lg">
               Contact Me
-            </a>
+            </Link>
             <a
-              href="/resume.pdf"
+              href="/LogesResume (2).pdf"
+              download
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-info btn-lg"
             >
               Download Resume
             </a>
-          
+
           </div>
           {/* Social Icons */}
           <div className="d-flex justify-content-center justify-content-lg-start gap-4 fs-4 fs-lg-3 flex-wrap">
@@ -122,14 +149,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CSS Enhancements */}
       <style>{`
-        /* Animated Gradient Background */
-        #home {
-          background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b2735);
-          background-size: 400% 400%;
-          animation: gradientBG 15s ease infinite;
-        }
         @keyframes gradientBG {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
