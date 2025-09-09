@@ -1,8 +1,7 @@
-// src/pages/Projects.jsx
 import React from "react";
 import pic from "../assets/pic.png";
 
-// Tech Stack Badge
+// Tech Stack Badge Component
 const TechBadge = ({ tech }) => (
   <span
     className="badge me-1 mb-2"
@@ -20,6 +19,7 @@ const TechBadge = ({ tech }) => (
   </span>
 );
 
+// Project Data Array
 const projectData = [
   {
     title: "Personal Portfolio",
@@ -36,7 +36,7 @@ const projectData = [
     description:
       "Kanban-style task manager built with React, Node.js, MongoDB, and Bootstrap. Features deadline tracking and reminders.",
     image: pic,
-    tech: ["React", "Node.js", "MongoDB", "Bootstrap"],
+    tech: ["React",  "Bootstrap"],
     demo: "https://yourtaskapp.live",
     github: "https://github.com/yourusername/task-manager",
   },
@@ -51,6 +51,7 @@ const projectData = [
   },
 ];
 
+// Main Projects Component
 export default function Projects() {
   return (
     <section
@@ -75,25 +76,25 @@ export default function Projects() {
         </h2>
 
         {/* Featured Project */}
-        <div className="row mb-5 justify-content-center">
+        <div className="row justify-content-center mb-5">
           {projectData
             .filter((p) => p.featured)
             .map((proj, idx) => (
               <div className="col-12 col-lg-10" key={idx}>
                 <div
-                  className="card featured-card shadow border-0 d-flex flex-lg-row overflow-hidden"
+                  className="card featured-card shadow border-0 d-flex flex-column flex-lg-row overflow-hidden"
                   style={{
                     background: "#223043",
                     borderRadius: "1.6rem",
-                    minHeight: "260px",
                     alignItems: "center",
+                    minHeight: "260px",
                   }}
                 >
                   {/* Left Image */}
                   <div className="col-lg-5 d-none d-lg-block p-0">
                     <img
                       src={proj.image}
-                      alt={proj.title + " screenshot"}
+                      alt={`${proj.title} screenshot`}
                       className="w-100 h-100"
                       style={{
                         objectFit: "cover",
@@ -183,7 +184,7 @@ export default function Projects() {
                 >
                   <img
                     src={proj.image}
-                    alt={proj.title + " screenshot"}
+                    alt={`${proj.title} screenshot`}
                     className="card-img-top"
                     style={{
                       maxHeight: "155px",

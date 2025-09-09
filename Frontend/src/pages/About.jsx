@@ -1,5 +1,6 @@
 // src/pages/About.jsx
-import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default function About() {
   return (
@@ -29,18 +30,37 @@ export default function About() {
             Hi! I’m <span className="fw-semibold" style={{ color: "#00bcd4" }}>Logeskumar R</span>, passionate about building modern web applications and solving real-world challenges. My journey in tech began with curiosity and has grown into a love for <span style={{ color: "#00bcd4", fontWeight: "bold" }}>full-stack development</span> (MERN, Java) and exploring new frontiers in AI.
           </p>
 
-        
+
 
           {/* Personal Touch */}
           <p className="fs-5 mb-3">
             I love collaborating with others, tackling logic puzzles, and finding ways technology can make an impact. My approach blends creativity, logical problem-solving, and a commitment to continuous learning.
           </p>
-             
+
           {/* Value & CTA */}
           <p className="fs-5 mb-4">
             My goal is to create responsive, elegant, and scalable solutions—always striving to deliver value for users and teams. <br />
             <span className="fw-semibold" style={{ color: "#00bcd4" }}>Want to see my work?</span>
-            <span> Check out my <a href="#projects" style={{ color: "#00bcd4", textDecoration: "underline" }}>Projects</a> or <a href="https://linkedin.com/in/logeskumar" style={{ color: "#00bcd4", textDecoration: "underline" }}>connect with me on LinkedIn</a>!</span>
+            <span>
+              Check out my{" "}
+              <Link
+                to="/projects"
+                style={{ color: "#00bcd4", textDecoration: "underline" }}
+              >
+                Projects
+              </Link>
+              {" "}or{" "}
+              <a
+                href="https://linkedin.com/in/logeskumar"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#00bcd4", textDecoration: "underline" }}
+              >
+                connect with me on LinkedIn
+              </a>
+              !
+            </span>
+
           </p>
         </div>
 
